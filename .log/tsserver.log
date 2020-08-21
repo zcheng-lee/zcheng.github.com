@@ -1,0 +1,28 @@
+Info 0    [15:11:27.340] Starting TS Server
+Info 1    [15:11:27.342] Version: 3.6.2
+Info 2    [15:11:27.342] Arguments: /usr/local/bin/node /usr/local/bin/tsserver --logFile /Users/simon/github/zcheng.github.io/.log/tsserver.log --logVerbosity info --cancellationPipeName /private/var/folders/kt/b5x0yl_56h1drdb8xgfmbk_r0000gn/T/90703e9948c1ca7398223db0fbb1cfeb/tscancellation*
+Info 3    [15:11:27.342] Platform: darwin NodeVersion: 13 CaseSensitive: false
+Info 4    [15:11:28.962] Search path: /Users/simon/github/zcheng.github.io
+Info 5    [15:11:28.963] For info: /Users/simon/github/zcheng.github.io/gtag.js :: No config files found.
+Info 6    [15:11:28.974] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 7    [15:11:30.530] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 1 structureChanged: true Elapsed: 1556ms
+Info 8    [15:11:30.531] Project '/dev/null/inferredProject1*' (Inferred) 
+Info 9    [15:11:30.531] 	Files (6)
+
+Info 10   [15:11:30.531] -----------------------------------------------
+Info 11   [15:11:30.649] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 12   [15:11:30.666] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 2 structureChanged: false Elapsed: 17ms
+Info 13   [15:11:30.666] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 14   [15:11:31.848] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 15   [15:11:31.855] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 3 structureChanged: false Elapsed: 6ms
+Info 16   [15:11:31.855] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 17   [15:11:32.425] Format host information updated
+Info 18   [15:11:32.505] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 19   [15:11:32.509] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 4 structureChanged: false Elapsed: 4ms
+Info 20   [15:11:32.509] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 21   [15:11:53.644] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 22   [15:11:53.649] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 5 structureChanged: false Elapsed: 3ms
+Info 23   [15:11:53.649] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 24   [15:11:53.650] Structure before ensureProjectForOpenFiles:
+Info 25   [15:11:53.650] Structure after ensureProjectForOpenFiles:
+Info 26   [15:11:53.651] got projects updated in background, updating diagnostics for /Users/simon/github/zcheng.github.io/gtag.js

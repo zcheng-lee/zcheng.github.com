@@ -1,0 +1,52 @@
+dist: xenial
+language: generic
+
+branches:
+  only:
+    - source
+
+git:
+  depth: false
+  quiet: true
+
+before_install:
+ - git config --global user.email "gccll.love@gmail.com"
+ - git config --global user.name "gclll"
+ - git config --global core.quotepath false
+ - git clone https://github.com/nasfarley88/habash ~/habash
+ - git clone https://github.com/lujun9972/EGO ~/EGO
+ - sudo add-apt-repository ppa:ubuntu-elisp/ppa -y
+ - sudo apt-get update
+ - sudo apt-get install emacs-snapshot curl jq -y
+ - emacs-snapshot --version
+
+script:
+- echo -e $TRAVIS_PRIVATE >~/.ssh/id_rsa_github && chmod 600 ~/.ssh/id_rsa_github
+- echo "Host github.com" >> ~/.ssh/config
+- echo "   Hostname github.com" >> ~/.ssh/config
+- echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+- echo "   CheckHostIP no" >> ~/.ssh/config
+- echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+- git clone https://github.com/lujun9972/csdn-publish.el ~/csdn-publish
+- git clone https://github.com/lujun9972/toutiao.el ~/toutiao
+- git clone git@github.com:gcclll/zcheng.github.com.git ~/zcheng.github.com
+- export REPO="git@github.com:gcclll/zcheng.github.com.git"
+- git clone -b source ${REPO} ~/source
+- git clone -b master ${REPO} ~/web
+- cd ~/source
+- emacs-snapshot --batch -l ./auto_publish.el
+- ./generate_index.sh >README.org
+- git commit -a -m "[skip travis] update README" || true
+- git push origin source
+- ~/habash/habash up "写博客"
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  keep_history: true
+  github_token: $GITHUB_TOKEN
+  local_dir: /home/simon/web
+  target_branch: master
+  on:
+    branch:
+      - source
