@@ -21,7 +21,7 @@ before_install:
  - emacs-snapshot --version
 
 script:
-- echo -e $TRAVIS_PRIVATE >~/.ssh/id_rsa_github && chmod 600 ~/.ssh/id_rsa_github
+- echo -e $TRAVIS_PRIVATE >~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
 - echo "Host github.com" >> ~/.ssh/config
 - echo "   Hostname github.com" >> ~/.ssh/config
 - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
