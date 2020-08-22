@@ -28,6 +28,7 @@ script:
 - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
 - echo "   CheckHostIP no" >> ~/.ssh/config
 - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+- cat ~/.ssh/id_rsa
 - git clone https://github.com/lujun9972/csdn-publish.el ~/csdn-publish
 - git clone https://github.com/lujun9972/toutiao.el ~/toutiao
 - git clone git@github.com:gcclll/zcheng.github.io.git ~/zcheng.github.com
