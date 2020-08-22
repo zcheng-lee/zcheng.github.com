@@ -7,8 +7,7 @@ git:
   depth: false
   quiet: true
 before_install:
-- openssl aes-256-cbc -K $encrypted_c8f353fc0970_key -iv $encrypted_c8f353fc0970_iv
-  -in id_rsa_travis.enc -out ~/.ssh/id_rsa_travis -d
+- openssl aes-256-cbc -K $encrypted_189e52c2c347_key -iv $encrypted_189e52c2c347_iv -in deploy_key.enc -out deploy_key -d
 - git config --global user.email "gccll.love@gmail.com"
 - git config --global user.name "gcclll"
 - git config --global core.quotepath false
@@ -26,6 +25,7 @@ script:
 - git clone -b source ${REPO} ~/source
 - git clone -b master ${REPO} ~/web
 - cd ~/source
+- cat "deploy_key" > .gitignore
 - emacs-snapshot --batch -l ./auto_publish.el
 - "./generate_index.sh >README.org"
 - git commit -a -m "[skip travis] update README" || true
