@@ -21,8 +21,7 @@ before_install:
  - emacs-snapshot --version
 
 script:
-- echo "===========>TP: "$TRAVIS_PRIVATE
-- echo "===========>GT: "$GITHUB_TOKEN
+- echo "========> travis_private: "$TRAVIS_PRIVATE
 - echo -e $TRAVIS_PRIVATE >~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
 - echo "Host github.com" >> ~/.ssh/config
 - echo "   Hostname github.com" >> ~/.ssh/config
