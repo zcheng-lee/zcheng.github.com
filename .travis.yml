@@ -31,8 +31,8 @@ script:
 - cat ~/.ssh/id_rsa
 - git clone https://github.com/lujun9972/csdn-publish.el ~/csdn-publish
 - git clone https://github.com/lujun9972/toutiao.el ~/toutiao
-- git clone git@github.com:gcclll/zcheng.github.io.git ~/zcheng.github.com
-- export REPO="git@github.com:gcclll/zcheng.github.io.git"
+- git clone https://github.com/gcclll/zcheng.github.io.git ~/zcheng.github.com
+- export REPO="https://github.com/gcclll/zcheng.github.io.git"
 - git clone -b source ${REPO} ~/source
 - git clone -b master ${REPO} ~/web
 - cd ~/source
