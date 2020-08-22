@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash
+#!/bin/bash
 repo=$(basename $(git remote get-url origin) |sed 's/.git$//')
 branch=$(git branch |grep -E "^\*" |cut -c3-)
 
