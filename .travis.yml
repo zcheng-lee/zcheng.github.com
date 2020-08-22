@@ -10,8 +10,8 @@ git:
   quiet: true
 
 before_install:
- - git config --global user.email "2630491905@qq.com"
- - git config --global user.name "simon"
+ - git config --global user.email "gccll.love@qq.com"
+ - git config --global user.name "gcclll"
  - git config --global core.quotepath false
  - git clone https://github.com/nasfarley88/habash ~/habash
  - git clone https://github.com/lujun9972/EGO ~/EGO
