@@ -1,34 +1,24 @@
 dist: xenial
 language: generic
-
 branches:
   only:
-    - source
-
+  - source
 git:
   depth: false
   quiet: true
-
 before_install:
- - git config --global user.email "gccll.love@gmail.com"
- - git config --global user.name "gcclll"
- - git config --global core.quotepath false
- - git clone https://github.com/nasfarley88/habash ~/habash
- - git clone https://github.com/lujun9972/EGO ~/EGO
- - sudo add-apt-repository ppa:ubuntu-elisp/ppa -y
- - sudo apt-get update
- - sudo apt-get install emacs-snapshot curl jq -y
- - emacs-snapshot --version
-
+- openssl aes-256-cbc -K $encrypted_c8f353fc0970_key -iv $encrypted_c8f353fc0970_iv
+  -in id_rsa_travis.enc -out ~\/.ssh/id_rsa_travis -d
+- git config --global user.email "gccll.love@gmail.com"
+- git config --global user.name "gcclll"
+- git config --global core.quotepath false
+- git clone https://github.com/nasfarley88/habash ~/habash
+- git clone https://github.com/lujun9972/EGO ~/EGO
+- sudo add-apt-repository ppa:ubuntu-elisp/ppa -y
+- sudo apt-get update
+- sudo apt-get install emacs-snapshot curl jq -y
+- emacs-snapshot --version
 script:
-- echo -e $TRAVIS_PRIVATE >~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
-- cat ~/.ssh/id_rsa
-- echo "Host github.com" >> ~/.ssh/config
-- echo "   Hostname github.com" >> ~/.ssh/config
-- echo "   StrictHostKeyChecking no" >> ~/.ssh/config
-- echo "   CheckHostIP no" >> ~/.ssh/config
-- echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
-- cat ~/.ssh/id_rsa
 - git clone https://github.com/lujun9972/csdn-publish.el ~/csdn-publish
 - git clone https://github.com/lujun9972/toutiao.el ~/toutiao
 - git clone https://github.com/gcclll/zcheng.github.io.git ~/zcheng.github.com
@@ -37,18 +27,17 @@ script:
 - git clone -b master ${REPO} ~/web
 - cd ~/source
 - emacs-snapshot --batch -l ./auto_publish.el
-- ./generate_index.sh >README.org
+- "./generate_index.sh >README.org"
 - git commit -a -m "[skip travis] update README" || true
 - git push origin source
 - ~/habash/habash up "写博客"
-
 deploy:
   provider: pages
   skip_cleanup: true
   keep_history: true
-  github_token: $GITHUB_TOKEN
-  local_dir: /home/travis/web
+  github_token: "$GITHUB_TOKEN"
+  local_dir: "/home/travis/web"
   target_branch: master
   on:
     branch:
-      - source
+    - source
