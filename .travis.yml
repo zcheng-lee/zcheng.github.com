@@ -35,7 +35,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   keep_history: true
-  github_token: "$GITHUB_TOKEN"
+  # github_token: "$GITHUB_TOKEN"
   local_dir: "/home/travis/web"
   target_branch: master
   on:
